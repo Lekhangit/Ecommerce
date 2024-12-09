@@ -19,13 +19,38 @@ function App() {
 
   const [countryList, setCountryList] = useState([]);
   const [selectedCountry, setselectedCountry] = useState('');
-  const [isOpenProductModal,setisOpenProductModal]= useState(false);
+  const [isOpenProductModal, setisOpenProductModal] = useState(false);
   const [isHeaderFooterShow, setisHeaderFooterShow] = useState(true);
-  const [isLogin, setIsLogin]= useState(false);
+  const [isLogin, setIsLogin] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null); // Thêm state cho sản phẩm được chọn
+  const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
     getCountry("https://countriesnow.space/api/v0.1/countries/")
   }, []);
+
+ 
+  // Hàm thêm sản phẩm vào giỏ hàng
+  const addToCart = (product) => {
+    setCartItems((prevCartItems) => {
+      const existingItem = prevCartItems.find((item) => item.id === product.id);
+      if (existingItem) {
+        return prevCartItems.map((item) =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
+      }
+      return [...prevCartItems, { ...product, quantity: 1 }];
+    });
+  };
+
+  // Hàm xóa sản phẩm khỏi giỏ hàng
+  const removeFromCart = (productId) => {
+    setCartItems((prevCartItems) =>
+      prevCartItems.filter((item) => item.id !== productId)
+    );
+  };
 
   const getCountry = async (url) => {
     const responsive = await axios.get(url).then((res) => {
@@ -43,7 +68,13 @@ function App() {
     isHeaderFooterShow,
     setisHeaderFooterShow,
     isLogin,
-    setIsLogin
+    setIsLogin,
+    selectedProduct,
+    setSelectedProduct,
+    cartItems,
+    addToCart,
+    setCartItems, 
+    removeFromCart,
   }
 
   return (
@@ -53,23 +84,23 @@ function App() {
         {
           isHeaderFooterShow === true && <Header />
         }
-        
+
         <Routes>
           <Route path="/" exact={true} element={<Home />} />
           <Route path="/cat/:id" exact={true} element={<Listing />} />
-          <Route path="/product/:id" exact={true} element={<ProductDetails/>} />
-          <Route path="/cart" exact={true} element={<Cart/>} />
-          <Route path="/signIn" exact={true} element={<SignIn/>} />
-          <Route path="/signUp" exact={true} element={<SignUp/>} />
-          
+          <Route path="/product/:id" exact={true} element={<ProductDetails />} />
+          <Route path="/cart" exact={true} element={<Cart />} />
+          <Route path="/signIn" exact={true} element={<SignIn />} />
+          <Route path="/signUp" exact={true} element={<SignUp />} />
+
         </Routes>
         {
           isHeaderFooterShow === true && <Footer />
         }
-        
+
 
         {
-          isOpenProductModal === true && <ProductModal />
+          isOpenProductModal && <ProductModal selectedProduct={selectedProduct} />
         }
 
       </MyContext.Provider>

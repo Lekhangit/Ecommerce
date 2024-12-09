@@ -55,42 +55,14 @@ const Home = () => {
                             </div>
 
 
-                            <div className="product_row w-100 mt-2">
-                                <Swiper
-                                    slidesPerView={4}
-                                    spaceBetween={0}
-                                    navigation={true}
-                                    slidesPerGroup={3}
-                                    modules={[Navigation]}
-                                    className="mySwiper"
-                                >
-                                    <SwiperSlide>
-                                        <ProductItem />
-
-                                    </SwiperSlide>
+                       
+                            <div className="product_row productRow2 w-100 mt-4- d-flex">
+                                <ProductItem></ProductItem>
+                                
 
 
-                                    <SwiperSlide>
-                                        <ProductItem />
-
-                                    </SwiperSlide>
-
-                                    <SwiperSlide>
-                                        <ProductItem />
-
-                                    </SwiperSlide>
-
-                                    <SwiperSlide>
-                                        <ProductItem />
-
-                                    </SwiperSlide>
-
-                                    <SwiperSlide>
-                                        <ProductItem />
-
-                                    </SwiperSlide>
-                                </Swiper>
                             </div>
+                            
 
 
 
@@ -110,13 +82,7 @@ const Home = () => {
 
                             <div className="product_row productRow2 w-100 mt-4- d-flex">
                                 <ProductItem></ProductItem>
-                                <ProductItem></ProductItem>
-                                <ProductItem></ProductItem>
-                                <ProductItem></ProductItem>
-                                <ProductItem></ProductItem>
-                                <ProductItem></ProductItem>
-                                <ProductItem></ProductItem>
-                                <ProductItem></ProductItem>
+                                
 
 
                             </div>
