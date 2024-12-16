@@ -532,3 +532,134 @@ border-radius: 10px !important;}
 .signInPage .box .txt{font-size: 14px; font-weight: 500;}
 
 .signUpPage .box{width: 500px;}
+/* Phong cách tổng thể cho popup đặt hàng */
+.checkoutPopup {
+    padding: 20px;
+    font-family: "Arial", sans-serif;
+  }
+  
+  /* Tiêu đề */
+  .checkoutPopup h1,
+  .checkoutPopup h2,
+  .checkoutPopup h3,
+  .checkoutPopup h4,
+  .checkoutPopup h5,
+  .checkoutPopup h6 {
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+  
+  .checkoutPopup h6 {
+    font-size: 18px;
+  }
+  
+  /* Section nội dung */
+  .checkoutPopup .section-title {
+    font-size: 16px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+  }
+  
+  /* Form nhập liệu */
+  .checkoutPopup form .form-control {
+    margin-bottom: 15px;
+  }
+  
+  .checkoutPopup .MuiTextField-root,
+  .checkoutPopup .MuiSelect-root {
+    width: 100%;
+  }
+  
+  .checkoutPopup input,
+  .checkoutPopup select {
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #d9d9d9;
+    width: 100%;
+  }
+  
+  /* Các nút lựa chọn loại địa chỉ */
+  .checkoutPopup .address-type-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+  }
+  
+  .checkoutPopup .address-type-buttons button {
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 5px;
+    background: #f5f5f5;
+    border: 1px solid #ccc;
+    transition: background 0.3s ease;
+  }
+  
+  .checkoutPopup .address-type-buttons button:hover {
+    background: #e8e8e8;
+  }
+  
+  /* Nút mặc định */
+  .checkoutPopup .set-default-address {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #337ab7;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Phần tóm tắt đơn hàng */
+  .checkoutPopup .order-summary {
+    background-color: #f7f7f7;
+    padding: 15px;
+    border-radius: 7px;
+    margin-top: 20px;
+  }
+  
+  .checkoutPopup .order-summary h6 {
+    font-size: 16px;
+    font-weight: 700;
+  }
+  
+  .checkoutPopup .order-summary .summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+  }
+  
+  .checkoutPopup .order-summary .summary-row h6 {
+    font-weight: 800;
+  }
+  
+  .checkoutPopup .order-summary .highlight {
+    font-size: 18px;
+    color: #ff6600;
+    font-weight: 700;
+  }
+  
+  /* Nút thanh toán */
+  .checkoutPopup .btn-pay {
+    margin-top: 15px;
+    width: 100%;
+    background-color: #ff6600;
+    color: white;
+    font-size: 16px;
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .checkoutPopup .btn-pay:hover {
+    background-color: #e65c00;
+  }
+  
+  /* Khoảng cách và padding */
+  .checkoutPopup .spacing {
+    margin-top: 20px;
+  }
+  
